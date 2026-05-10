@@ -9,6 +9,7 @@ export class UserService {
     async createUser (email, password, name, course){
         try{
             const hashUserPassword = await hashPassword(password)
+    
             const newUser = await UserModel.create({
                 email, name, course,
                 password: hashUserPassword
@@ -42,7 +43,6 @@ export class UserService {
             }
         }
         catch (err){
-            console.log(err.message)
             throw new Error(err.message)
         }
 

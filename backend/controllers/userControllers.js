@@ -15,10 +15,10 @@ export const register = async (req, res) => {
     const { email, password, name, course } = data
     const regService = new UserService()
     const userExits = await regService.getUser(email)
-
+    
     if (userExits.status){
         console.log("User Found!")
-        return res.status(200).json({status: true, details: "Account exists try signing in.."})
+        return res.status(409).json({status: true, details: "Conflicting email address.."})
     }
 
     try{
