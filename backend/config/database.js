@@ -1,8 +1,9 @@
+import "dotenv/config";
 import { Sequelize } from "sequelize";
 
 
-export const sequelize = new Sequelize({
-            dialect: "sqlite",
+export const sequelize = new Sequelize(process.env.DATABASE_URL, {
+            dialect: "postgres",
             logging: false,
-            storage: "./storage/database.sqlite3"
+            // storage: "./storage/database.sqlite3"
         })

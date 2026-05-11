@@ -28,10 +28,7 @@ export class UserService {
         try{
             const user = await UserModel.findOne({ 
                 where: {
-                    [Op.or]: [
-                        {email: lookup},
-                        {user_id: lookup}
-                    ]
+                    email: lookup
                 }
             })
 
