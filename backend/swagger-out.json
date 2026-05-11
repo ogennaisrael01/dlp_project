@@ -5,10 +5,10 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "127.0.0.1:10000",
+  "host": "https://dlp-project.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/read-root": {
